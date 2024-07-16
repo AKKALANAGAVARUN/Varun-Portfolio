@@ -49,9 +49,10 @@ function Hero() {
         <p className={styles.description}>
           With a passion for technology and a dedication to excellence, I aim to create impactful experiences.
         </p>
-        <a href={CV} download>
-          <button className="hover">Resume</button>
+        <a href={CV} target="_blank" rel="noopener noreferrer">
+        <button className="hover">Resume</button>
         </a>
+
       </div>
     </section>
   );
