@@ -1,0 +1,13 @@
+.container {
+  text-align: center;
+}
+
+.container p {
+  font-size: 16px;
+  color: var(--footer-text-color);
+}
+
+.container a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit; /* Keeps the text color the same as the surrounding text */
+}
