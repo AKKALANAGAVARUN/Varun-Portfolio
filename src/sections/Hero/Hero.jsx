@@ -48,7 +48,7 @@ function Hero() {
         <p className={styles.description}>
           With a passion for technology and a dedication to excellence, I aim to create impactful experiences.
         </p>
-        <a href="https://drive.google.com/file/d/1d0mbVwfpAtEPC9i3D0wDRLdCjsjmztJs/view?usp=sharing" target="_blank">
+        <a href="https://drive.google.com/file/d/1AXI8pz4arkyhoWcY4IAQpbnjqfXvUj5c/view?usp=sharing" target="_blank">
           <button className="hover">Resume</button>
         </a>
       </div>
