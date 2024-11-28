@@ -45,11 +45,11 @@ npm install
 
 3. Start development server
 ```bash
-```
 npm run dev
+```
 
-📫 Contact
-Email: akkalavarun3024@gmail.com
-LinkedIn: [Akkala Naga Varun](https://www.linkedin.com/in/akkala-naga-varun-b672a3202/)
-GitHub: @AKKALANAGAVARUN
-Phone: +91 9347983502
+# 📫 Contact
+- Email: akkalavarun3024@gmail.com
+- LinkedIn: [Akkala Naga Varun](https://www.linkedin.com/in/akkala-naga-varun-b672a3202/)
+- GitHub: @AKKALANAGAVARUN
+- Phone: +91 9347983502
