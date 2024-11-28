@@ -1,100 +1,271 @@
 .container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  text-align: center;
-  height: 100dvh;
-  min-height: 500px;
-
-  .hero {
-    max-width: 200px;
-  }
-
-  span {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-
-    a {
-      margin: 0;
-
-      img {
-        width: 30px;
-      }
-    }
-  }
-
-  a {
-    width: fit-content;
-    align-self: center;
-  }
-
-  button {
-    background-color: var(--btn-color);
-    color: var(--btn-text-color);
-    border: none;
-    border-radius: 20px;
-    width: 126px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
-  }
-
-  button:hover {
-    transform: scale(1.05);
-  }
-
-  button:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-  }
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 80px);
+  color: var(--text-light);
 }
 
-.colorModeContainer {
-  position: relative;
-}
-
-.colorMode {
-  position: absolute;
-  right: 35;
-  width: 30px;
-}
-
-.colorMode:hover {
-  cursor: pointer;
-}
-
-.description {
-  max-width: 24ch;
+.container.dark {
+  color: var(--text-dark);
 }
 
 .info {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex: 1;
+  max-width: 600px;
 }
 
-@media (width >= 800px) {
-  .container {
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-evenly;
+.nameContainer {
+  margin-bottom: 1.5rem;
+}
 
-    .hero {
-      max-width: 350px;
-      width: 350px;
-    }
+.nameContainer h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, var(--accent-color), #4a90e2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nameContainer h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.9;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.contactIcon {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+}
+
+.contactItem:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateX(5px);
+}
+
+.container.dark .contactItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.socials {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.container.dark .socialLink {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.socialIcon {
+  font-size: 1.3rem;
+}
+
+.socialLink:hover {
+  transform: translateY(-2px);
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.resumeButton {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.resumeButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+}
+
+.container.dark .resumeButton:hover {
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.4);
+}
+
+.imageContainer {
+  flex: 1;
+  max-width: 400px;
+  position: relative;
+  padding: 20px;
+}
+
+.imageContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  border: 4px solid var(--accent-color);
+  transform: rotate(-5deg);
+  transition: all 0.3s ease;
+}
+
+.imageContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  border: 4px solid var(--accent-color);
+  transform: rotate(5deg);
+  transition: all 0.3s ease;
+  opacity: 0.3;
+}
+
+.heroImage {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.container.dark .heroImage {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.imageContainer:hover::before {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+.imageContainer:hover::after {
+  transform: rotate(8deg) scale(1.05);
+}
+
+.imageContainer:hover .heroImage {
+  transform: scale(1.02);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .nameContainer h1 {
+    font-size: 2.5rem;
+  }
+
+  .nameContainer h2 {
+    font-size: 1.3rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .contact {
+    align-items: center;
+  }
+
+  .contactItem {
+    font-size: 1rem;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .socialLink {
+    font-size: 1rem;
+  }
+
+  .imageContainer {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    height: 350px;
   }
 }
 
-@media (width >= 1400px) {
-  .container {
-    .hero {
-      max-width: 400px;
-      width: 400px;
-    }
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .nameContainer h1 {
+    font-size: 2rem;
+  }
+
+  .nameContainer h2 {
+    font-size: 1.1rem;
+  }
+
+  .contactItem,
+  .socialLink {
+    font-size: 0.9rem;
+  }
+
+  .imageContainer {
+    max-width: 250px;
+  }
+
+  .heroImage {
+    height: 300px;
   }
 }

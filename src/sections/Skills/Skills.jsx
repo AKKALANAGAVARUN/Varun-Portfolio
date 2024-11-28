@@ -1,44 +1,55 @@
+import React, { useContext } from 'react';
 import styles from './SkillsStyles.module.css';
-import checkMarkIconDark from '../../assets/checkmark-dark.svg';
-import checkMarkIconLight from '../../assets/checkmark-light.svg';
-import SkillList from '../../common/SkillList';
-import { useTheme } from '../../common/ThemeContext';
+import { ThemeContext } from '../../context/ThemeContext';
+import { FaCode, FaDatabase, FaTools, FaLaptopCode } from 'react-icons/fa';
 
 function Skills() {
-  const { theme } = useTheme();
-  const checkMarkIcon = theme === 'light' ? checkMarkIconLight : checkMarkIconDark;
+  const { darkMode } = useContext(ThemeContext);
+
+  const skillCategories = [
+    {
+      title: "Programming Languages",
+      icon: <FaCode />,
+      skills: ["Python", "Java", "JavaScript", "R"]
+    },
+    {
+      title: "Web Technologies",
+      icon: <FaLaptopCode />,
+      skills: ["React", "Node.js", "HTML5", "CSS3"]
+    },
+    {
+      title: "Tools & Platforms",
+      icon: <FaTools />,
+      skills: ["Git", "VS Code", "Power BI", "Linux", "Windows", "UML", "Microsoft Office"]
+    },
+    {
+      title: "Database & Others",
+      icon: <FaDatabase />,
+      skills: ["SQL", "IPC Frameworks", "SDLC", "Agile"]
+    }
+  ];
 
   return (
-    <section id="skills" className={styles.container}>
-      <h1 className="sectionTitle">Skills</h1>
-      <div className={styles.skillList}>
-        <SkillList src={checkMarkIcon} skill="Python" />
-        <SkillList src={checkMarkIcon} skill="Java" />
-        <SkillList src={checkMarkIcon} skill="R" />
-      </div>
-      <hr />
-      <div className={styles.skillList}>
-        <SkillList src={checkMarkIcon} skill="HTML" />
-        <SkillList src={checkMarkIcon} skill="CSS" />
-        <SkillList src={checkMarkIcon} skill="JavaScript" />
-        <SkillList src={checkMarkIcon} skill="Node" />
-      </div>
-      <hr />
-      <div className={styles.skillList}>
-        <SkillList src={checkMarkIcon} skill="React" />
-        <SkillList src={checkMarkIcon} skill="SQL" />
-        <SkillList src={checkMarkIcon} skill="Git" />
-        <SkillList src={checkMarkIcon} skill="Jira" />
-        <SkillList src={checkMarkIcon} skill="Power BI" />
-      </div>
-      <hr />
-      <div className={styles.skillList}>
-        
-        <SkillList src={checkMarkIcon} skill="Windows" />
-        <SkillList src={checkMarkIcon} skill="Linux" />
-        <SkillList src={checkMarkIcon} skill="IPC frameworks" />
-        <SkillList src={checkMarkIcon} skill="SDLC" />
-        <SkillList src={checkMarkIcon} skill="Agile" />
+    <section className={`${styles.container} ${darkMode ? styles.dark : ''}`}>
+      <div className={styles.content}>
+        <h2 className={styles.title}>Skills</h2>
+        <div className={styles.skillsGrid}>
+          {skillCategories.map((category, index) => (
+            <div key={index} className={styles.skillCard}>
+              <div className={styles.cardHeader}>
+                <span className={styles.categoryIcon}>{category.icon}</span>
+                <h3>{category.title}</h3>
+              </div>
+              <div className={styles.skillsList}>
+                {category.skills.map((skill, skillIndex) => (
+                  <div key={skillIndex} className={styles.skillItem}>
+                    <span className={styles.skillName}>{skill}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

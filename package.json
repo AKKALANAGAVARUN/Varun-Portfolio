@@ -1,4 +1,3 @@
-
 {
   "homepage": "https://akkalanagavarun.github.io/Varun-Portfolio/",
   "name": "varun-portfolio",
@@ -14,8 +13,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^11.12.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
